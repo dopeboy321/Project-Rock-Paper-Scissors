@@ -26,12 +26,25 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
-
-let answer = prompt("Paper, Rock, Scissors?");
+let answer = prompt("Paper, Rock, Scissors?").toLowerCase();
 const playerSelection = answer;
 const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
 
 
+function game() {
+  for (let i = 0; i < 5; i++)  {
+    playRound(playerSelection === "rock" && computerSelection === "paper");
+    console.log("you lose");
+    computerScore++;
+    playRound(playerSelection === "paper" && computerSelection === "rock");
+    console.log("you win");
+    userScore++;
+  }
+}
+ 
 
+let userScore
+let computerScore
+console.log(game())
 
