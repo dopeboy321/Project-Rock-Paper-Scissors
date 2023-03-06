@@ -32,19 +32,28 @@ const computerSelection = getComputerChoice();
 console.log(playRound(playerSelection, computerSelection));
 
 
-function game() {
-  for (let i = 0; i < 5; i++)  {
-    playRound(playerSelection === "rock" && computerSelection === "paper");
-    console.log("you lose");
-    computerScore++;
-    playRound(playerSelection === "paper" && computerSelection === "rock");
-    console.log("you win");
-    userScore++;
+// //Write a NEW function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
+// Remember loops? This is a great opportunity to use one to play those five rounds:
+
+// for (let i = 0; i < 5; i++) {
+//    // your code here!
+// }
+// At this point you should be using console.log() to display the results of each round and the winner at the end.
+
+
+let userScore = 0;
+let computerScore = 0;
+
+function game(userScore, computerScore) {
+  
+  
+  for (let i = 0; i < 5; i++) {
+    if (userScore >= 5 && computerScore < 5) {
+      return "congratulation, you won!"
+    } else if (userScore < 5 && computerScore >= 5) {
+      return "that was close, try again"
+    }
   }
 }
- 
 
-let userScore
-let computerScore
-console.log(game())
-
+console.log(game(userScore, computerScore));
