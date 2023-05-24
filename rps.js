@@ -31,6 +31,8 @@ function playRound(playerSelection, computerSelection) {
 };
 
 const choices = document.querySelectorAll('.choices');
+const playerScorePara = document.getElementById('player-score');
+const computerScorePara = document.getElementById('computer-score');
 let userScore = 0;
 let computerScore = 0;
 
@@ -51,11 +53,8 @@ choices.forEach(choice => choice.addEventListener('click', (event) => {
         restartScores();
     };
       }));
-
+  
 function updateScore() {
-  const playerScorePara = document.getElementById('player-score');
-  const computerScorePara = document.getElementById('computer-score');
-
   playerScorePara.textContent = `Player: ${userScore}`;
   computerScorePara.textContent = `Computer: ${computerScore}`;
 };
@@ -68,6 +67,6 @@ function updateScore() {
     userScore = 0;
     computerScore = 0;
     results.textContent = 'Start New Game!';
-    playerScorePara = userScore;
-    computerScorePara = computerScore;
+    playerScorePara.textContent = `Player: ${userScore}`;
+    computerScorePara.textContent = `Computer: ${computerScore}`;
   };
