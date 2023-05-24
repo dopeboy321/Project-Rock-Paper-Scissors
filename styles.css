@@ -10,7 +10,9 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  
+  height: 800px;
+  justify-content: center;
+  font-family: 'Teko', sans-serif;
 }
 
 .choices {
@@ -20,10 +22,31 @@ body {
 
 #scores {
   display: flex;
-  justify-content: space-around
+  justify-content: space-around;
+}
+
+#player-score {
+  font-size: 40px;
+}
+
+#computer-score {
+  font-size: 40px;
 }
 
 #results {
   display: flex;
   justify-content: center;
+  font-size: 60px;
+}
+
+#restart {
+  height: 180px;
+  width: 180px;
+}
+
+#restart-icon {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 350px;
 }
